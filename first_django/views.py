@@ -2,7 +2,16 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    return render(request,'index.html')
+    context = {
+        'title' : 'Home',
+        'author' : 'Rahardian',
+        'navigation' : [
+            ['/', 'Home'],
+            ['/blog/', 'Blog'],
+            ['/about/', 'About'],
+        ]
+    }
+    return render(request,'index.html',context)
 
 def about(request):
-    return render(requet,'about.html')
+    return render(request,'about.html')

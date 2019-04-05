@@ -1,17 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>HOME</title>
+    <title>{{title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
   </head>
   <body>
-    <h1>Ini adalah halaman home</h1>
-    <h2>selamat datang di home</h2>
-    <a href="/about">Go to About</a>
-    <a href="/blog">Go to blog</a>
+    <img style="width: 100%; margin: 0; padding: 0" src="{% static 'img/home-banner.jpg' %}" alt="">
+    <h1>Ini adalah halaman {{title}}</h1>
+    <ul>
+      {# ini adalah template tags #}
+      {% for link, name in navigation %}
+      <li><a href="{{link}}">{{name}}</a></li>
+      {% endfor %}
+    </ul>
+    <h2>selamat datang di {{title}}</h2>
+    <h1>This website is made by {{author}}</h1>
   </body>
 </html>

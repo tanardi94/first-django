@@ -1,10 +1,8 @@
-#blog views
 from django.shortcuts import render
 
-# Create your views here.
 def index(request):
     context = {
-        'title' : 'Blog',
+        'title' : 'About',
         'author' : 'Rahardian',
         'navigation' : [
             ['/', 'Home'],
@@ -12,4 +10,4 @@ def index(request):
             ['/about/', 'About'],
         ]
     }
-    return render(request,'blog/index.html',context)
+    return render(request,'index.html',context)
